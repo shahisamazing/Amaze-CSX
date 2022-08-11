@@ -1,0 +1,44 @@
+[
+    {
+        "iconUrl": "https://github.com/shahisamazing/Amaze-CSX/raw/refs/heads/master/IsaiDubProvider/icon.png",
+        "fileHash": "sha256-a4c822872dd33f090b78c55188e531d913abc618b1e2017229251a451cbcb81a",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/shahisamazing/Amaze-CSX",
+        "fileSize": 22174,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "shahisamazing"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "IsaiDubProvider",
+        "description": "Tamil dubbed movies and web series",
+        "url": "https://raw.githubusercontent.com/shahisamazing/Amaze-CSX/builds/IsaiDubProvider.cs3",
+        "name": "IsaiDubProvider"
+    },
+    {
+        "iconUrl": "https://github.com/shahisamazing/Amaze-CSX/raw/refs/heads/master/MoviesdaProvider/icon.png",
+        "fileHash": "sha256-a6f03c9df54ddff019829055fda46fcdd57e4a1511d29bd93329874340a6200a",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/shahisamazing/Amaze-CSX",
+        "fileSize": 22028,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "shahisamazing"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "MoviesdaProvider",
+        "description": "Latest tamil movies and web series",
+        "url": "https://raw.githubusercontent.com/shahisamazing/Amaze-CSX/builds/MoviesdaProvider.cs3",
+        "name": "MoviesdaProvider"
+    }
+]
