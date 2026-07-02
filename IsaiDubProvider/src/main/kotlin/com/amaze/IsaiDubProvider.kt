@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element
 import android.content.Context
 
 class IsaiDubProvider : MainAPI() {
-    override var mainUrl = "https://isaidub.guru"
+    override var mainUrl = "https://isaidub.ceo"
     override var name = "IsaiDub"
     override val hasMainPage = true
     override var lang = "ta"
