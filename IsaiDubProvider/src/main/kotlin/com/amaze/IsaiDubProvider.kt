@@ -39,7 +39,7 @@ class IsaiDubProvider : MainAPI() {
             app.get(request.data + "?get-page=$page/").document
         }
 
-        val home = document.select("div.f").mapNotNull {
+        val home = document.select("div.f, div.folder").mapNotNull {
             it.toSearchResult()
         }
 
@@ -74,7 +74,7 @@ class IsaiDubProvider : MainAPI() {
     override suspend fun load(url: String): LoadResponse {
         val doc = app.get(url).document
 
-        val title = doc.selectFirst(".f > a")?.text()
+        val title = doc.selectFirst("div.f > a, div.folder > a")?.text()
         val poster = fixUrlNull(doc.selectFirst(".movie-info-container > picture > img")?.attr("src"))
         val description = doc.selectFirst(".movie-info-container > .movie-synopsis")?.text()?.trim()
 
@@ -118,7 +118,7 @@ class IsaiDubProvider : MainAPI() {
             }
         } else {
             val seasonQualitiesLink = fixUrlNull(
-                doc.selectFirst(".f > a")?.attr("href")
+                doc.selectFirst("div.f > a, div.folder > a")?.attr("href")
             )
             val seasonQualitiesListDoc = app.get(seasonQualitiesLink!!).document
 
@@ -126,7 +126,7 @@ class IsaiDubProvider : MainAPI() {
                 seasonQualitiesLink
             } else {
                 fixUrlNull(
-                    seasonQualitiesListDoc.selectFirst(".f > a")?.attr("href")
+                    seasonQualitiesListDoc.selectFirst("div.f > a, div.folder > a")?.attr("href")
                 )
             }
 
@@ -237,10 +237,10 @@ class IsaiDubProvider : MainAPI() {
         // Movie
         val doc = app.get(data).document
 
-        val formatsPage = fixUrlNull(doc.selectFirst(".f > a")?.attr("href"))
+        val formatsPage = fixUrlNull(doc.selectFirst("div.f > a, div.folder > a")?.attr("href"))
         val formatsDoc = app.get(formatsPage!!).document
 
-        val qualitiesLinks = formatsDoc.select(".f > a")
+        val qualitiesLinks = formatsDoc.select("div.f > a, div.folder > a")
 
         for (qualities in qualitiesLinks) {
             val quality = qualityRegex.find(qualities.text())?.value
